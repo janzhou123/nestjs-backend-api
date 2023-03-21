@@ -3,14 +3,18 @@ import { APP_FILTER, APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 
-import { getConfig } from './utils';
-import { LoggerInterceptor, RedisCacheInterceptor, RedisLimitInterceptor } from './interceptors';
-import { TransformInterceptor } from './interceptors/transform.interceptor';
-import { HttpExceptionFilter } from './filters/http-exception.filter';
-import { ApiModule } from './api/api.module';
-import { ValidationPipe } from './pipe/validation.pipe';
-import { PluginModule } from './plugin/plugin.module';
-import { SharedModule } from './shared/shared.module';
+import { getConfig } from './common/utils';
+import {
+  LoggerInterceptor,
+  RedisCacheInterceptor,
+  RedisLimitInterceptor,
+} from './common/interceptors';
+import { TransformInterceptor } from './common/interceptors/transform.interceptor';
+import { HttpExceptionFilter } from './common/filters/http-exception.filter';
+import { ApiModule } from './modules/api.module';
+import { ValidationPipe } from './common/pipe/validation.pipe';
+import { PluginModule } from './common/plugin/plugin.module';
+import { SharedModule } from './common/shared/shared.module';
 
 @Module({
   imports: [

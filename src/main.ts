@@ -1,7 +1,7 @@
 import { Logger, VersioningType } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { getConfig, IS_DEV } from './utils';
+import { getConfig, IS_DEV } from './common/utils';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { knife4jSetup } from 'nestjs-knife4j';
 
